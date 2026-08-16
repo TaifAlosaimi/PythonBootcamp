@@ -6,6 +6,9 @@ for number in numbers:
 
 print(sqaured_numbers)
 
+
+
+
 comp_numbers = [
     number ** 2 
     for number in numbers
