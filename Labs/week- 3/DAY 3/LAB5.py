@@ -1,9 +1,9 @@
-nums = [11, 22, 33, 44, 55, 66]
+nums = [22, 11, 33, 66, 55, 44]
 
-import math
+import math         #استوردت ماث عشان رح اسوي عمليات حسابيه
 
-print(sum(nums))
-print(len(nums))
-print(max(nums))
-print(min(nums))
-print(f"{math.sqrt(max(nums)):.2f}")
+print(sum(nums))       #مجموع قيم العناصر
+print(len(nums))          #عدد العناصر
+print(max(nums))             #اكبر رقم في اللست
+print(min(nums))         #اصغر رقم في اللست
+print(f"{math.sqrt(max(nums)):.2f}")        #الجذر التربيعي لاكبر رقم مع التقريب لرقمين بعد الفاصله

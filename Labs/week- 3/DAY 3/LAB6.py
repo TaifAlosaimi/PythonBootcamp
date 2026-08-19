@@ -1,4 +1,4 @@
-skills = {"Python", "Java", "Flask", "Django"}
+skills = {"Python", "Java", "Flask", "Django"}        #عندي set يعني No Dupplicates & mutable
 
 skills.add("C++")
 skills.add("HTML")

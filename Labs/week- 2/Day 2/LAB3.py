@@ -1,4 +1,4 @@
-student_name, student_age, student_is_registered = "Saleh2", 24, True
+student_name, student_age, student_is_registered = "Saleh", 24, True
 
 print(type(student_age))
 print(type(student_name))

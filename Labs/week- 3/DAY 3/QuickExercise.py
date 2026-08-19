@@ -85,9 +85,9 @@
 # backend = {"Python", "Django", "SQL"}
 # frontend = {"HTML","CSS","Javascript","SQL"}
 
-# print(backend | frontend)
-# print(backend & frontend)
-# print(backend - frontend)
+# print(backend | frontend)               #جيبهم كلهم بدون تكرار وبدون ترتيب حتى
+# print(backend & frontend)            #هات الاشياء المتشابهه
+# print(backend - frontend)                         #هات الاشياء الموجودة في باك اند وماهي موجودة في الفرونت اند
 
 
 

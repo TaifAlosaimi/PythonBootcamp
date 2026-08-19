@@ -1,7 +1,7 @@
 def printer():
     print("Welcome")
 def desk():
-    printer()
+    printer()                             #just playing with functions
 def room():
     desk()
 room()

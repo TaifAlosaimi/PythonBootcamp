@@ -1,3 +1,3 @@
 def greet_student(name):
-    print(f"welcome {name}")
-greet_student("Dalal and Taif")
+    print(f"Welcome {name}")                   #F string تسمح لك بوجود متغير مع السترينق
+greet_student("Taif and Haya")
