@@ -21,23 +21,26 @@ class InvaildStudentsError(Exception):        #exception لبيانات الطل
     pass
 
 
-def validate_student(student):
+def validate_student(student):                                 #ابغى اتحقق من صحة بيانات الطلاب
     if "name" not in student or not student["name"]:
         raise InvaildStudentsError("student name is rquired")
-    if "score" not in student:
+    if "score" not in student:                                     #أستخدم if عشان اتحقق من كل الشروط اللي أبغاها
         raise InvaildStudentsError("student score is reqired")
+    if not isinstance(student["score"]), (int, float):             #أتأكد ان الدرجة ماهي نص بل رقم او فلوت
+        raise InvaildStudentsError("score must be a number")
+    if not 0 >= (student["score"]) <= 100:
+        raise InvaildStudentsError("score must be between 0 and 100 ")
 
 
+try:                      #جرب تفتح الملف و تقرأه
+    with open(file_path, "r", encoding"utf-8") as file: 
+        students = json.load(file)                    #حمل بيانات json و حولها ل python
 
+    for student in students:
+        validate_student(student)
 
-with open(file_path, "r", encoding"utf-8") as file:       #افتح الملف للقراءة
-    students = json.load(file)
-
-try:
-    with open(file_path, "r", encoding"utf-8") as file:
-    students = json.load(file)
-except FileNotFoundError:
-    print("Students file not found")
+except FileNotFoundError:                                     #ابغى اعلمه كيف يتعامل بكل حالة تصير معاه
+    print("Students file not found")            #في حالة الملف مو موجود
 except json.JSONDecodeError:
     print("invaild json file")
 

@@ -1,7 +1,7 @@
-list_name = ["Sara", "Dalal", "Taif","Nouf"]
+list_name = ["Sara", "Dalal", "Taif","Nouf"] 
 
-counted_chars = [
-    {"name":name, "count":len(name)}
+counted_chars = [                      #List comprehension
+    {"name":name, "count":len(name)}                 #Dictionary
     for name in list_name
 ]
 print(counted_chars)

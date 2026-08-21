@@ -2,6 +2,6 @@ skills = {"Python", "Java", "Flask", "Django"}        #عندي set يعني No 
 
 skills.add("C++")
 skills.add("HTML")
-skills.discard("Flask")
+skills.discard("Flask")                          #Delete 
 
 print(skills)
