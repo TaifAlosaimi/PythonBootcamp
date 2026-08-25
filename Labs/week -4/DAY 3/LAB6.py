@@ -2,7 +2,7 @@ class Food:                    #أنشأت كلاس
     def __init__(self, name):                  #Constructor 
         self.name = name                    #Attribute يخزن لي الاسم
 
-    def ShowName(self):
+    def ShowName(self):                  #method تعرض لي الاسم
         return self.name
 
 class Fruites(Food):                 #سويت class يرث من الFood class
@@ -12,10 +12,10 @@ class Fruites(Food):                 #سويت class يرث من الFood class
 
 
     @staticmethod                #From method to staticmethod
-    def stripname(newName):
-        return newName.strip()
+    def stripname(newName):                  #method لها مهمة معينة
+        return newName.strip()                      #مهمتها : حذف المسافات من بداية ونهاية ال string
 
 
-myFav = Fruites("Apple", 70)
-print(myFav.ShowName())
-print(myFav.stripname(  "TA            "))
+myFav = Fruites("Apple", 70)                  #Object لل  child class 
+print(myFav.ShowName())                            #طبعت الاوبجكت مع ميثود الشو نيم
+print(myFav.stripname(  "TA            "))                          # طبعت الاوبجكت مع ميثود الستريب نيم
