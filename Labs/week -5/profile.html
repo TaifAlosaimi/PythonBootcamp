@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
+    <link rel="stylesheet" href="style.css">
+
     <mata charset="UTF-8">
         <title>My Profile</title>
     </head>
@@ -13,11 +15,41 @@
         <p>literlly enjoy learning Python & Html.</p>
 
         <h2>My skills</h2>
+        <a href="https://www.google.com">Check My CV</a>
+        <p>
+        <img src="photo.jpg.jpg" alt="Profaile photo" width = "700">
+        <form action ="/contact" method="POST"
+        <label for="email">Email</label>
+        <input id="email" name="email">
+        <textarea name="message"></textarea>
+        <button type="submit">Send</button>
+        </form>
+        <form action="/contact" method="POST">
+        <label for="name">Name:</label>                   
+    
+        <input type="text" id="name" name="name">
 
+        <label for="email">Email:</label>
 
-   <a href="https://www.google.com">Check My CV</a>
-<p>
-<img src="photo.png.png" alt="Profaile photo" width = "700">
+        <input type="email" id="email" name="email">
+
+        <label for="subject">Subject:</label>
+
+        <select id="subject" name="subject">
+            <option value="Python ">Python</option>
+            <option value="physics">physics</option>
+            <option value="Data analysit">Data analysit</option>
+        </select>
+
+        <label for="subscribe">
+            <input type="checkbox" id="subscribe" name="subscribe">
+        </label>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message"></textarea>
+
+        <button type="submit">Send</button>
 </body>
 
-    
+</html>
+
