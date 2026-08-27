@@ -26,9 +26,25 @@ body {
 
     /* Make sizing easier */
     box-sizing: border-box;
+
+   
 }
 
-
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+     }
+     nav {
+        display:flex;
+        gap: 1rem;
+     }
+    @media (max-widrh: 768px) {
+       nav {
+            flex-direction: column;
+        }
+    }
 /* ==============================
    MAIN TITLE
    ============================== */
@@ -194,10 +210,10 @@ a:hover {
 
 img {
     /* Image size */
-    width: 520px;
+    width: 600px;
 
     /* Fixed height */
-    height: 350px;
+    height: 450px;
 
     /* Prevent image distortion */
     object-fit: cover;
@@ -234,4 +250,14 @@ img:hover {
     box-shadow:
         0 0 35px rgba(124, 58, 237, 0.6),
         0 25px 60px rgba(0, 0, 0, 0.6);
+}
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+.card {
+    padding: 2rem;
+    border-radius: 12px;
+    background: #252a4a;
 }
