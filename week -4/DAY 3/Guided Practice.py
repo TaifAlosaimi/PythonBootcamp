@@ -2,7 +2,7 @@ from pathlib import Path           #استورد path عشان اتعامل مع
 import json               #استورد json لقراءة وكتابة بيانات json
 
 
-data_dir = Path("data")           #احدد المجلد اللي بيخزن لي البيانات
+data_dir = Path(__file__).parent / "data"           #احدد المجلد اللي بيخزن لي البيانات
 data_dir.mkdir(exist_ok=True)           #انشئ المجلد اذا ماهو موجود
 
 file_path = data_dir / "students.json"         #احدد اسم ومسار الملف
