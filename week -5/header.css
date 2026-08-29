@@ -1,0 +1,302 @@
+/* ==============================
+   GENERAL PAGE
+   ============================== */
+
+body {
+    /* Dark navy background */
+    background-color: #0b1026;
+
+    /* Main text color */
+    color: white;
+
+    /* Clean modern font */
+    font-family: Arial, sans-serif;
+
+    /* Remove browser default spacing */
+    margin: 0;
+
+    /* Add space around the page */
+    padding: 0;
+
+    /* Center text */
+    text-align: center;
+}
+
+
+/* ==============================
+   HEADER
+   ============================== */
+
+header {
+    /* Use Flexbox */
+    display: flex;
+
+    /* Put logo and navigation in one row */
+    flex-direction: row;
+
+    /* Put space between logo and navigation */
+    justify-content: space-between;
+
+    /* Center items vertically */
+    align-items: center;
+
+    /* Space inside the header */
+    padding: 20px 40px;
+
+    /* Slightly lighter navy */
+    background-color: #111936;
+
+    /* Add a small shadow */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Logo */
+
+.logo {
+    /* Make logo text bigger */
+    font-size: 24px;
+
+    /* Make logo bold */
+    font-weight: bold;
+}
+
+
+/* Navigation */
+
+nav {
+    /* Use Flexbox for navigation links */
+    display: flex;
+
+    /* Add space between links */
+    gap: 20px;
+}
+
+
+/* Navigation links */
+
+nav a {
+    /* Remove underline */
+    text-decoration: none;
+
+    /* Light purple color */
+    color: #c4b5fd;
+
+    /* Make links bold */
+    font-weight: bold;
+
+    /* Smooth hover effect */
+    transition: 0.3s;
+}
+
+
+/* Navigation hover */
+
+nav a:hover {
+    /* Change color when mouse is over the link */
+    color: #a78bfa;
+}
+
+
+/* ==============================
+   HERO
+   ============================== */
+
+.hero {
+    /* Use Flexbox */
+    display: flex;
+
+    /* Put text and image next to each other */
+    flex-direction: row;
+
+    /* Center them horizontally */
+    justify-content: center;
+
+    /* Center them vertically */
+    align-items: center;
+
+    /* Allow items to move to a new line */
+    flex-wrap: wrap;
+
+    /* Space between text and image */
+    gap: 50px;
+
+    /* Space inside the Hero */
+    padding: 80px 40px;
+}
+
+
+/* Hero text */
+
+.hero h1 {
+    /* Large heading */
+    font-size: 48px;
+
+    /* Purple color */
+    color: #c4b5fd;
+
+    /* Add a small glow */
+    text-shadow: 0 0 15px rgba(124, 58, 237, 0.5);
+}
+
+
+.hero p {
+    /* Light secondary text */
+    color: #b8c1ec;
+
+    /* Make paragraph readable */
+    font-size: 20px;
+}
+
+
+/* Hero image */
+
+.hero img {
+    /* Set image width */
+    width: 350px;
+
+    /* Keep image height proportional */
+    height: auto;
+
+    /* Rounded corners */
+    border-radius: 20px;
+
+    /* Add a border */
+    border: 2px solid #7c3aed;
+
+    /* Add glow/shadow */
+    box-shadow: 0 0 25px rgba(124, 58, 237, 0.4);
+}
+
+
+/* ==============================
+   FEATURES
+   ============================== */
+
+.features-grid {
+    /* Use CSS Grid */
+    display: grid;
+
+    /* Responsive columns */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+    /* Space between cards */
+    gap: 20px;
+
+    /* Add space around the section */
+    padding: 40px;
+}
+
+
+/* Feature cards */
+
+.card {
+    /* Transparent-looking dark card */
+    background-color: #151d3d;
+
+    /* Purple border */
+    border: 1px solid #3f3cbb;
+
+    /* Space inside the card */
+    padding: 30px;
+
+    /* Center the text */
+    text-align: center;
+
+    /* Rounded corners */
+    border-radius: 15px;
+
+    /* Add shadow */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+
+    /* Smooth hover animation */
+    transition: 0.3s;
+}
+
+
+/* Card title */
+
+.card h2 {
+    /* Purple heading */
+    color: #c4b5fd;
+}
+
+
+/* Card paragraph */
+
+.card p {
+    /* Light gray text */
+    color: #b8c1ec;
+}
+
+
+/* Card hover */
+
+.card:hover {
+    /* Move card slightly upward */
+    transform: translateY(-5px);
+
+    /* Stronger shadow */
+    box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
+}
+
+
+/* ==============================
+   RESPONSIVE DESIGN
+   ============================== */
+
+
+/* Tablet */
+
+@media (max-width: 900px) {
+
+    /* Stack the header items */
+    header {
+        flex-direction: column;
+
+        /* Add space between logo and navigation */
+        gap: 15px;
+    }
+
+    /* Make hero items stack */
+    .hero {
+        flex-direction: column;
+    }
+
+    /* Make features two columns */
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    /* Smaller header spacing */
+    header {
+        padding: 20px;
+    }
+
+    /* Stack navigation links */
+    nav {
+        flex-direction: column;
+    }
+
+    /* Smaller hero title */
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    /* Smaller image */
+    .hero img {
+        width: 280px;
+    }
+
+    /* One card per row */
+    .features-grid {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+}
