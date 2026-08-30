@@ -1,0 +1,266 @@
+/* ==============================
+   GENERAL PAGE
+   ============================== */
+
+body {
+    /* Dark premium background */
+    background: linear-gradient(135deg, #0b1026, #17143b);
+
+    /* Main text color */
+    color: white;
+
+    /* Clean modern font */
+    font-family: "Segoe UI", Tahoma, sans-serif;
+
+    /* Remove default browser spacing */
+    margin: 0;
+
+    /* Center the content */
+    text-align: center;
+
+    /* Add space around the page */
+    padding: 40px 20px;
+
+    /* Make the page fill the screen */
+    min-height: 100vh;
+
+    /* Make sizing easier */
+    box-sizing: border-box;
+
+   
+}
+
+
+/* This is from day 4,lab 1 : */
+    header {                                            
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+     }
+     nav {
+        display:flex;
+        gap: 1rem;
+     }
+    @media (max-widrh: 768px) {
+       nav {
+            flex-direction: column;
+        }
+    }
+/* ==============================
+   MAIN TITLE
+   ============================== */
+
+h1 {
+    /* Remove default margin */
+    margin: 80px 0 20px;
+
+    /* Large title */
+    font-size: 48px;
+
+    /* Bold title */
+    font-weight: 700;
+
+    /* White text */
+    color: white;
+
+    /* Purple glow around the title */
+    text-shadow:
+        0 0 10px rgba(124, 58, 237, 0.8),
+        0 0 25px rgba(124, 58, 237, 0.4);
+}
+
+
+/* ==============================
+   PARAGRAPH
+   ============================== */
+
+p {
+    /* Light text */
+    color: #c5c9e8;
+
+    /* Comfortable size */
+    font-size: 20px;
+
+    /* Space around paragraph */
+    margin: 0 0 30px;
+
+    /* Line spacing */
+    line-height: 1.6;
+}
+
+
+/* ==============================
+   SKILLS LIST
+   ============================== */
+
+ul {
+    /* Remove default bullets */
+    list-style: none;
+
+    /* Remove default padding */
+    padding: 0;
+
+    /* Center the list */
+    margin: 30px auto;
+
+    /* Set list width */
+    width: 320px;
+}
+
+
+li {
+    /* Glass effect */
+    background: rgba(255, 255, 255, 0.08);
+
+    /* Transparent border */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    /* Rounded corners */
+    border-radius: 14px;
+
+    /* Space inside each item */
+    padding: 15px;
+
+    /* Space between items */
+    margin: 12px 0;
+
+    /* Light text */
+    color: white;
+
+    /* Make text stronger */
+    font-weight: 600;
+
+    /* Smooth animation */
+    transition: 0.3s ease;
+
+    /* Glass blur */
+    backdrop-filter: blur(10px);
+}
+
+
+/* Hover effect */
+
+li:hover {
+    /* Move the item slightly */
+    transform: translateY(-4px);
+
+    /* Purple border */
+    border-color: #8b5cf6;
+
+    /* Purple glow */
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.35);
+}
+
+
+/* ==============================
+   LINK
+   ============================== */
+
+a {
+    /* Remove default blue */
+    color: #c4b5fd;
+
+    /* Remove underline */
+    text-decoration: none;
+
+    /* Make it stronger */
+    font-weight: 600;
+
+    /* Bigger text */
+    font-size: 18px;
+
+    /* Display as a button-like element */
+    display: inline-block;
+
+    /* Space around it */
+    margin: 25px 0;
+
+    /* Space inside */
+    padding: 12px 28px;
+
+    /* Rounded button */
+    border-radius: 30px;
+
+    /* Purple background */
+    background: linear-gradient(90deg, #7c3aed, #ec4899);
+
+    /* White text */
+    color: white;
+
+    /* Smooth animation */
+    transition: 0.3s ease;
+}
+
+
+/* Link hover */
+
+a:hover {
+    /* Move button upward */
+    transform: translateY(-3px);
+
+    /* Stronger glow */
+    box-shadow:
+        0 0 15px rgba(124, 58, 237, 0.6),
+        0 0 30px rgba(236, 72, 153, 0.3);
+}
+
+
+/* ==============================
+   IMAGE
+   ============================== */
+
+img {
+    /* Image size */
+    width: 600px;
+
+    /* Fixed height */
+    height: 450px;
+
+    /* Prevent image distortion */
+    object-fit: cover;
+
+    /* Rounded corners */
+    border-radius: 20px;
+
+    /* Space around image */
+    margin: 30px auto;
+
+    /* Make image centered */
+    display: block;
+
+    /* Glass-style border */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    /* Premium glow */
+    box-shadow:
+        0 0 25px rgba(124, 58, 237, 0.35),
+        0 20px 50px rgba(0, 0, 0, 0.5);
+
+    /* Smooth animation */
+    transition: 0.4s ease;
+}
+
+
+/* Image hover */
+
+img:hover {
+    /* Slight zoom */
+    transform: scale(1.02);
+
+    /* Stronger purple glow */
+    box-shadow:
+        0 0 35px rgba(124, 58, 237, 0.6),
+        0 25px 60px rgba(0, 0, 0, 0.6);
+}
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+.card {
+    padding: 2rem;
+    border-radius: 12px;
+    background: #252a4a;
+}
+
