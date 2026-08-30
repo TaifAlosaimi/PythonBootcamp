@@ -169,6 +169,38 @@ nav a:hover {
 }
 
 
+
+/* #Note: This code is from Day 5 Lab 2 */
+.hero-title {                                        
+    animation: slideIn .9s ease forwards;
+}
+
+.hero-text {
+    animation: fadeIn 1s ease .25s forwards;
+}
+/* Hero animations */
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
 /* ==============================
    FEATURES
    ============================== */

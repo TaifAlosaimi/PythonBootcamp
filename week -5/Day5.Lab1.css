@@ -1,0 +1,19 @@
+/* CSS Variables */
+:root {
+    --main-color: rgb(97, 90, 90);
+    --accent-color: rgb(184, 12, 12);
+}
+
+/* Button */
+.cta {
+    background: var(--main-color);
+
+    transition: transform .25s ease, background .25s ease;
+}
+
+/* Hover and Focus states */
+.cta:hover,
+.cta:focus {
+    transform: translateY(-4px);
+    background: var(--accent-color);
+}
