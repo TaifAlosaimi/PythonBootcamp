@@ -1,4 +1,4 @@
-**URL collision**
+# URL collision
 
 urlpatterns = [
     path("products/create/", create_view),
@@ -6,11 +6,11 @@ urlpatterns = [
 ]
 
 
-# 1. What happens when I access /products/create/?
-## Answer:
+## 1. What happens when I access /products/create/?
+### Answer:
 Django calls create_view.
 
-## Justification:
+### Justification:
 Django checks URL patterns from top to bottom.
 The first pattern matches /products/create/, so Django stops there and calls create_view.
 
@@ -20,11 +20,11 @@ So .. First match wins.
 
 
 
-# 2. How do I view product ID = "create"?
-## Answer :
+## 2. How do I view product ID = "create"?
+### Answer :
 I cannot access the product with ID "create" using /products/create/ with these URL patterns.
 
-## Justification:
+### Justification:
 There is a URL collision between the fixed route:
     path("products/create/", create_view)
 and the dynamic route:
