@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Receipt</h1>
+
+<p>Your payment receipt is ready.</p>
+
+<a href="{% url 'payments:checkout' %}">
+    Back to Checkout
+</a>
+
+{% endblock %}
