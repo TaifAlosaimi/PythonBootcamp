@@ -1,26 +1,135 @@
-
 {% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Startup Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Startup Platform{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'reuseable.css' %}">
 </head>
+
 <body>
 
-    <nav>
-        <a href="{% url 'dashboard:home' %}">Dashboard</a>
-        <a href="{% url 'courses:list' %}">Courses</a>
-        <a href="{% url 'users:login' %}">Login</a>
-        <a href="{% url 'users:profile' %}">Profile</a>
-        <a href="{% url 'payments:checkout' 
+    <!-- HEADER -->
+    <header class="site-header">
 
-    <hr>
+        <nav class="navbar">
 
-    {% block content %}
-    {% endblock %}
+            <a href="{% url 'dashboard:home' %}" class="logo">
+                SP.
+            </a>
+
+            <div class="nav-links">
+
+                <a href="{% url 'dashboard:home' %}">
+                    Dashboard
+                </a>
+
+                <a href="{% url 'courses:list' %}">
+                    Courses
+                </a>
+
+                <a href="{% url 'users:login' %}">
+                    Login
+                </a>
+
+                <a href="{% url 'users:profile' %}">
+                    Profile
+                </a>
+
+                <a href="{% url 'payments:checkout' %}">
+                    Checkout
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <div>
+
+                <span class="eyebrow">
+                    Startup Platform
+                </span>
+
+                <h2>
+                    Learn. Build.<br>
+                    Grow.
+                </h2>
+
+                <p class="footer-text">
+                    A modern platform for learning,
+                    building projects, and developing
+                    new skills.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <span class="eyebrow">
+                    Explore
+                </span>
+
+                <div class="footer-links">
+
+                    <a href="{% url 'dashboard:home' %}">
+                        Dashboard
+                    </a>
+
+                    <a href="{% url 'courses:list' %}">
+                        Courses
+                    </a>
+
+                    <a href="{% url 'users:profile' %}">
+                        Profile
+                    </a>
+
+                    <a href="{% url 'payments:checkout' %}">
+                        Checkout
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Startup Platform
+            </p>
+
+            <p>
+                Built with Django
+            </p>
+
+        </div>
+
+    </footer>
 
 </body>
+
 </html>

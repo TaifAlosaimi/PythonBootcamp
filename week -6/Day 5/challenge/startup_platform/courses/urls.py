@@ -9,4 +9,6 @@ urlpatterns = [
     path("category/<str:category>/", views.course_category, name="category"),
     path("info/", views.CourseInfoView.as_view(), name="info"),
     path("<slug:slug>/", views.course_detail, name="detail"),
+    path("home/", views.home, name="home"),
+
 ]

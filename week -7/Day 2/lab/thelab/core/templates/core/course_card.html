@@ -1,0 +1,35 @@
+{% load static %}
+
+<article class="course-card">
+
+    <div class="course-image">
+        <img src="{% static 'images/' %}{{ course.image }}" alt="{{ course.name }}">
+    </div>
+
+    <div class="course-info">
+
+        <p class="course-level">{{ course.level|title }}</p>
+
+        <h2>{{ course.name|title }}</h2>
+
+        <p class="course-description">
+            {{ course.description|truncatewords:12 }}
+        </p>
+
+        {% if course.students %}
+            <p class="course-students">
+                {{ course.students }} students enrolled
+            </p>
+        {% else %}
+            <p class="course-empty">
+                Be the first student to join this course.
+            </p>
+        {% endif %}
+
+        <a href="{% url 'core:course_detail' course.id %}" class="course-link">
+            Explore Course →
+        </a>
+
+    </div>
+
+</article>

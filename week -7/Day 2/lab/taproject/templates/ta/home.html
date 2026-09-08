@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+    <h1>Welcome {{ name }}</h1>
+
+    {% if name %}
+        <p>Hello, {{ name }}!</p>
+    {% else %}
+        <p>Hello, Guest!</p>
+    {% endif %}
+    <h2>Students</h2>
+    <p>{{ name|upper }}</p>
+    <p>{{ course|lower }}</p>
+
+    <ul>
+        {% for course in courses %}
+            <li>{{ course }}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

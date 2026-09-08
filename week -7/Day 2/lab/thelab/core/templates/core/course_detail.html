@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Course Details | TAIF ACADEMY{% endblock %}
+
+{% block content %}
+
+<section class="course-detail">
+
+    {% if course %}
+
+        <p class="eyebrow">TAIF ACADEMY</p>
+
+        <h1>{{ course.name|title }}</h1>
+
+        <p class="detail-level">
+            {{ course.level|title }}
+        </p>
+
+        <p class="detail-description">
+            {{ course.description|safe }}
+        </p>
+
+        {% if course.students %}
+            <p class="detail-students">
+                {{ course.students }} students currently enrolled.
+            </p>
+        {% else %}
+            <p class="course-empty">
+                This course currently has no students.
+                Be the first to join.
+            </p>
+        {% endif %}
+
+    {% else %}
+
+        <div class="empty-state">
+            <h1>Course Not Found</h1>
+            <p>The course you're looking for is not available.</p>
+        </div>
+
+    {% endif %}
+
+</section>
+
+{% endblock %}

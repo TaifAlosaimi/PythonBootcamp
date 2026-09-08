@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Courses | TAIF ACADEMY{% endblock %}
+
+{% block content %}
+
+<section class="courses-section">
+
+    <div class="section-heading">
+        <p class="eyebrow">TAIF ACADEMY</p>
+
+        <h1>Space Science Courses</h1>
+
+        <p>
+            Explore the science behind stars, planets, galaxies, and the universe.
+        </p>
+    </div>
+
+    <div class="courses-grid">
+
+        {% for course in courses %}
+
+            {% include "core/course_card.html" %}
+
+        {% empty %}
+
+            <div class="empty-state">
+                <h2>No courses available</h2>
+                <p>Check back soon for new space science courses.</p>
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}

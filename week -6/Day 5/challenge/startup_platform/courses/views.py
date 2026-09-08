@@ -80,3 +80,10 @@ def course_category(request, category):
 class CourseInfoView(View):
     def get(self, request):
         return render(request, "course_info.html")
+
+
+from django.http import HttpResponse
+
+def home(request):
+    print(request.method)  
+    return render(request,"base.html")

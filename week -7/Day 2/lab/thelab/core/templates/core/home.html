@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Home | TAIF ACADEMY{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+
+    <p class="eyebrow">TAIF ACADEMY</p>
+
+    <h1>
+        Explore the
+        <span>Universe.</span>
+    </h1>
+
+    <p class="hero-text">
+        Welcome, {{ username|title }}.
+        Discover space science through carefully designed courses
+        created for curious minds.
+    </p>
+
+    <a href="{% url 'core:courses' %}" class="hero-link">
+        Explore Courses →
+    </a>
+
+</section>
+
+<section class="home-intro">
+
+    <p class="eyebrow">LEARN BEYOND EARTH</p>
+
+    <h2>Where curiosity meets the cosmos.</h2>
+
+    <p>
+        From astronomy to astrophysics and planetary science,
+        build your understanding of the universe one course at a time.
+    </p>
+
+</section>
+
+{% endblock %}
