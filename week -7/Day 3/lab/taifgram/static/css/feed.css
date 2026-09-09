@@ -1,0 +1,243 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #080b14;
+    color: #f4f1ea;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    height: 80px;
+    padding: 0 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #242938;
+    background: #080b14;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.logo span {
+    color: #8f7cff;
+}
+
+.new-post {
+    color: #f4f1ea;
+    text-decoration: none;
+    border: 1px solid #454b60;
+    padding: 10px 18px;
+    border-radius: 30px;
+}
+
+.new-post:hover {
+    background: #8f7cff;
+    border-color: #8f7cff;
+}
+
+.hero {
+    max-width: 850px;
+    margin: auto;
+    padding: 100px 25px 70px;
+}
+
+.eyebrow {
+    color: #8f7cff;
+    font-size: 12px;
+    letter-spacing: 4px;
+}
+
+.hero h1,
+.create-card h1 {
+    font-size: 70px;
+    line-height: 1;
+    font-weight: 400;
+    margin: 20px 0;
+}
+
+.hero h1 span,
+.create-card h1 span {
+    color: #8f7cff;
+    font-style: italic;
+}
+
+.hero p:last-child {
+    color: #9ca3b5;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.feed {
+    width: 600px;
+    max-width: calc(100% - 30px);
+    margin: auto;
+    padding-bottom: 80px;
+}
+
+.post-card {
+    margin-bottom: 45px;
+    background: #101522;
+    border: 1px solid #242938;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.post-header {
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #8f7cff;
+    color: white;
+    font-weight: bold;
+}
+
+.post-header h2 {
+    font-size: 15px;
+    margin: 0 0 4px;
+}
+
+.post-header p {
+    margin: 0;
+    color: #737b8f;
+    font-size: 12px;
+}
+
+.post-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+}
+
+.post-content {
+    padding: 20px;
+}
+
+.post-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.like-button {
+    background: none;
+    border: none;
+    color: #ff6b91;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.like-button:hover {
+    transform: scale(1.05);
+}
+
+.likes {
+    color: #c5c9d4;
+    font-size: 14px;
+}
+
+.caption {
+    color: #c5c9d4;
+    line-height: 1.7;
+}
+
+.caption strong {
+    color: white;
+}
+
+.empty {
+    text-align: center;
+    padding: 70px 20px;
+    border: 1px solid #242938;
+    border-radius: 18px;
+}
+
+.empty p {
+    color: #8b92a3;
+}
+
+.empty a {
+    color: #8f7cff;
+    text-decoration: none;
+}
+
+.create-page {
+    max-width: 700px;
+    margin: auto;
+    padding: 90px 25px;
+}
+
+.create-card {
+    background: #101522;
+    border: 1px solid #242938;
+    border-radius: 20px;
+    padding: 45px;
+}
+
+.create-card form p {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: #c5c9d4;
+}
+
+.create-card input,
+.create-card textarea {
+    background: #080b14;
+    border: 1px solid #343a4b;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    font: inherit;
+}
+
+.submit-button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 14px;
+    border: none;
+    border-radius: 30px;
+    background: #8f7cff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    opacity: 0.85;
+}
+
+@media (max-width: 650px) {
+
+    .hero h1,
+    .create-card h1 {
+        font-size: 48px;
+    }
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .create-card {
+        padding: 25px;
+    }
+    
+}
+

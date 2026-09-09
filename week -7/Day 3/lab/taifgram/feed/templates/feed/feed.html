@@ -1,0 +1,132 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Taif | Astronaut Feed</title>
+
+    <link rel="stylesheet" href="{% static 'css/feed.css' %}">
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">
+            TAIF<span>GRAM</span>
+        </div>
+
+        <a href="{% url 'feed:create_post' %}" class="new-post">
+            + New Post
+        </a>
+
+    </header>
+
+
+    <main>
+
+        <section class="hero">
+
+            <p class="eyebrow">ASTRONAUT DIARY</p>
+
+            <h1>
+                Life beyond<br>
+                <span>Earth.</span>
+            </h1>
+
+            <p>
+                Moments, missions, and memories from Taif's journey through space.
+            </p>
+
+        </section>
+
+
+        <section class="feed">
+
+            {% for post in posts %}
+
+                <article class="post-card">
+
+                    <div class="post-header">
+
+                        <div class="avatar">
+                            {{ post.username|first|upper }}
+                        </div>
+
+                        <div>
+                            <h2>@{{ post.username }}</h2>
+                            <p>Astronaut • Space Mission</p>
+                        </div>
+
+                    </div>
+
+
+                    <img
+                        src="{{ post.image.url }}"
+                        alt="{{ post.description }}"
+                        class="post-image"
+                    >
+
+
+                    <div class="post-content">
+
+                        <div class="post-actions">
+
+                            <form method="post" action="{% url 'feed:like_post' post.id %}">
+                                {% csrf_token %}
+
+                                <button type="submit" class="like-button">
+                                    ♡ Like
+                                </button>
+
+                            </form>
+
+                            {% if post.likes == 0 %}
+
+                                <span class="likes">
+                                    Be the first to like this.
+                                </span>
+
+                            {% else %}
+
+                                <span class="likes">
+                                    {{ post.likes }} likes
+                                </span>
+
+                            {% endif %}
+
+                        </div>
+
+
+                        <p class="caption">
+                            <strong>@{{ post.username }}</strong>
+                            {{ post.description }}
+                        </p>
+
+                    </div>
+
+                </article>
+
+            {% empty %}
+
+                <div class="empty">
+                    <h2>No posts yet.</h2>
+                    <p>Start your astronaut journey by creating the first post.</p>
+                    <a href="{% url 'feed:create_post' %}">
+                        Create First Post →
+                    </a>
+                </div>
+
+            {% endfor %}
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
