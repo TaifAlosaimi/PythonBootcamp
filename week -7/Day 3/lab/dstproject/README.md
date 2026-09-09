@@ -67,3 +67,5 @@ staticmedia/
 │
 ├── manage.py
 └── requirements.txt
+
+![Project Screenshot](screenshots/upload-page.png)
