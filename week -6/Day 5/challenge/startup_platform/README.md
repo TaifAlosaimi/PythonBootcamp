@@ -85,6 +85,8 @@ startup_platform/
 ├── manage.py
 └── README.md
 
+```
+
 ## 📸 Screenshots
 
 ### Login
@@ -103,4 +105,4 @@ startup_platform/
 ![Receipt](screenshots/receipt.png.png)
 
 ### Footer
-![Footer](screenshots/footer.png)
+![Footer](screenshots/footer.png.png)
