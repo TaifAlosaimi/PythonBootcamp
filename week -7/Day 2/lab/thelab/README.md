@@ -61,30 +61,6 @@ thelab/
 └── requirements.txt
 ```
 
-## 📸 Project Screenshots
-
-### 🏠 Home Page
-
-![Home Page](screenshots/home.png)
-
-### 📚 Courses Page
-
-![Courses Page](screenshots/courses.png)
-
-### 🔎 Course Detail
-
-![Course Detail](screenshots/course-detail.png)
-
-## 🚀 Run Locally
-
-```bash
-pip install -r requirements.txt
-python manage.py runserver
-```
-
-Then open the local development server in your browser.
-
----
 
 
 ## 📸 Project Screenshots
@@ -100,6 +76,12 @@ Then open the local development server in your browser.
 ### 🔎 Course Detail
 
 ![Course Detail](screenshots/coursedetail.png)
+
+
+### 📖 Course Detail — Additional View
+
+![Course Detail Additional View](screenshots/course2detail.png)
+
 
 ### 📖 Course Detail — Additional View
 
