@@ -68,4 +68,7 @@ staticmedia/
 ├── manage.py
 └── requirements.txt
 
+```
+
+## 📸 Project Screenshot
 ![Project Screenshot](screenshots/upload-page.png)
