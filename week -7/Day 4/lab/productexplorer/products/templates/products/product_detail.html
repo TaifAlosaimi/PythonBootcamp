@@ -1,0 +1,141 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ product.name }} | Product Explorer</title>
+
+    <link rel="stylesheet" href="{% static 'css/products.css' %}">
+
+</head>
+
+
+<body>
+
+    <header class="site-header">
+
+        <a href="{% url 'products:product_list' %}" class="brand">
+            PRODUCT<span>EXPLORER</span>
+        </a>
+
+        <a
+            href="{% url 'products:product_list' %}"
+            class="back-link"
+        >
+            ← Back to collection
+        </a>
+
+    </header>
+
+
+    <main class="detail-page">
+
+        <section class="detail-card">
+
+            <p class="eyebrow">
+                PRODUCT 0{{ product.id }}
+            </p>
+
+            <p class="product-category">
+                {{ product.category }}
+            </p>
+
+            <h1>
+                {{ product.name }}
+            </h1>
+
+            <p class="detail-description">
+                {{ product.description }}
+            </p>
+
+
+            <div class="detail-meta">
+
+                <div>
+                    <span>PRICE</span>
+                    <strong>
+                        {{ product.price }} SAR
+                    </strong>
+                </div>
+
+                <div>
+                    <span>RATING</span>
+                    <strong>
+                        ★ {{ product.rating }}
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <nav class="tabs">
+
+                <a
+                    href="?tab=details"
+                    class="{% if tab == 'details' %}active{% endif %}"
+                >
+                    Details
+                </a>
+
+                <a
+                    href="?tab=reviews"
+                    class="{% if tab == 'reviews' %}active{% endif %}"
+                >
+                    Reviews
+                </a>
+
+                <a
+                    href="?tab=shipping"
+                    class="{% if tab == 'shipping' %}active{% endif %}"
+                >
+                    Shipping
+                </a>
+
+            </nav>
+
+
+            <div class="tab-content">
+
+                {% if tab == "details" %}
+
+                    <h2>Product Details</h2>
+
+                    <p>
+                        A carefully selected product from our collection,
+                        presented with its essential information.
+                    </p>
+
+                {% elif tab == "reviews" %}
+
+                    <h2>Customer Reviews</h2>
+
+                    <p>
+                        This product currently has a rating of
+                        {{ product.rating }} out of 5.
+                    </p>
+
+                {% elif tab == "shipping" %}
+
+                    <h2>Shipping Information</h2>
+
+                    <p>
+                        Standard delivery information is available
+                        for this product.
+                    </p>
+
+                {% endif %}
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

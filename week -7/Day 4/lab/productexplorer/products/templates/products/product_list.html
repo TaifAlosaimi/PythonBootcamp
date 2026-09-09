@@ -1,0 +1,283 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Product Explorer</title>
+
+    <link rel="stylesheet" href="{% static 'css/products.css' %}">
+</head>
+
+<body>
+
+    <header class="site-header">
+
+        <a href="{% url 'products:product_list' %}" class="brand">
+            PRODUCT<span>EXPLORER</span>
+        </a>
+
+        <span class="header-label">
+            CURATED COLLECTION
+        </span>
+
+    </header>
+
+
+    <main>
+
+        <section class="hero">
+
+            <p class="eyebrow">
+                THE COLLECTION
+            </p>
+
+            <h1>
+                Discover things<br>
+                <span>worth having.</span>
+            </h1>
+
+            <p class="hero-text">
+                Explore a carefully selected collection of products,
+                refined through search, filters, and thoughtful sorting.
+            </p>
+
+        </section>
+
+
+        <section class="filter-section">
+
+            <form method="get" class="filter-form">
+
+                <div class="field search-field">
+
+                    <label for="q">
+                        Search
+                    </label>
+
+                    <input
+                        type="text"
+                        id="q"
+                        name="q"
+                        value="{{ q }}"
+                        placeholder="Search products..."
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="category">
+                        Category
+                    </label>
+
+                    <select id="category" name="category">
+
+                        <option value="">
+                            All categories
+                        </option>
+
+                        {% for item in categories %}
+
+                            <option
+                                value="{{ item }}"
+                                {% if category == item %}selected{% endif %}
+                            >
+                                {{ item }}
+                            </option>
+
+                        {% endfor %}
+
+                    </select>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="min_price">
+                        Minimum price
+                    </label>
+
+                    <input
+                        type="number"
+                        id="min_price"
+                        name="min_price"
+                        value="{{ min_price }}"
+                        placeholder="0"
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="sort">
+                        Sort by
+                    </label>
+
+                    <select id="sort" name="sort">
+
+                        <option
+                            value="name"
+                            {% if sort == "name" %}selected{% endif %}
+                        >
+                            Name
+                        </option>
+
+                        <option
+                            value="price"
+                            {% if sort == "price" %}selected{% endif %}
+                        >
+                            Price
+                        </option>
+
+                        <option
+                            value="rating"
+                            {% if sort == "rating" %}selected{% endif %}
+                        >
+                            Rating
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button type="submit">
+                    Explore
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <section class="results-header">
+
+            <p>
+                {{ page_obj.paginator.count }} products found
+            </p>
+
+            <span>
+                PAGE {{ page_obj.number }}
+                / {{ page_obj.paginator.num_pages }}
+            </span>
+
+        </section>
+
+
+        <section class="product-grid">
+
+            {% for product in page_obj %}
+
+                <article class="product-card">
+
+                    <div class="product-number">
+                        0{{ product.id }}
+                    </div>
+
+                    <div class="product-category">
+                        {{ product.category }}
+                    </div>
+
+                    <h2>
+                        {{ product.name }}
+                    </h2>
+
+                    <p class="description">
+                        {{ product.description }}
+                    </p>
+
+
+                    <div class="product-meta">
+
+                        <div>
+                            <span>PRICE</span>
+                            <strong>
+                                {{ product.price }} SAR
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span>RATING</span>
+                            <strong>
+                                ★ {{ product.rating }}
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        href="{% url 'products:product_detail' id=product.id %}"
+                        class="details-link"
+                    >
+                        View product
+                        <span>→</span>
+                    </a>
+
+                </article>
+
+            {% empty %}
+
+                <div class="empty-state">
+
+                    <p>
+                        No products match your current filters.
+                    </p>
+
+                    <a href="{% url 'products:product_list' %}">
+                        Reset filters →
+                    </a>
+
+                </div>
+
+            {% endfor %}
+
+        </section>
+
+
+        {% if page_obj.paginator.num_pages > 1 %}
+
+            <nav class="pagination">
+
+                {% if page_obj.has_previous %}
+
+                    <a
+                        href="?{% if query_string %}{{ query_string }}&{% endif %}page={{ page_obj.previous_page_number }}"
+                    >
+                        ← Previous
+                    </a>
+
+                {% endif %}
+
+
+                <span>
+                    {{ page_obj.number }}
+                </span>
+
+
+                {% if page_obj.has_next %}
+
+                    <a
+                        href="?{% if query_string %}{{ query_string }}&{% endif %}page={{ page_obj.next_page_number }}"
+                    >
+                        Next →
+                    </a>
+
+                {% endif %}
+
+            </nav>
+
+        {% endif %}
+
+    </main>
+
+</body>
+
+</html>
