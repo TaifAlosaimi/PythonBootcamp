@@ -1,0 +1,194 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Course Catalog</title>
+
+    <link rel="stylesheet" href="{% static 'css/courses.css' %}">
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">
+            COURSE<span>CATALOG</span>
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <section class="hero">
+
+            <p class="eyebrow">LEARN & GROW</p>
+
+            <h1>
+                Explore our<br>
+                <span>courses.</span>
+            </h1>
+
+            <p>
+                Find the right course and build your skills.
+            </p>
+
+        </section>
+
+
+        <section class="filters">
+
+            <form method="get">
+
+                <input
+                    type="text"
+                    name="q"
+                    value="{{ q }}"
+                    placeholder="Search courses..."
+                >
+
+                <select name="category">
+
+                    <option value="">All categories</option>
+
+                    <option value="Programming"
+                        {% if category == "Programming" %}selected{% endif %}>
+                        Programming
+                    </option>
+
+                    <option value="Web Development"
+                        {% if category == "Web Development" %}selected{% endif %}>
+                        Web Development
+                    </option>
+
+                    <option value="Database"
+                        {% if category == "Database" %}selected{% endif %}>
+                        Database
+                    </option>
+
+                </select>
+
+
+                <select name="difficulty">
+
+                    <option value="">All levels</option>
+
+                    <option value="Beginner"
+                        {% if difficulty == "Beginner" %}selected{% endif %}>
+                        Beginner
+                    </option>
+
+                    <option value="Intermediate"
+                        {% if difficulty == "Intermediate" %}selected{% endif %}>
+                        Intermediate
+                    </option>
+
+                    <option value="Advanced"
+                        {% if difficulty == "Advanced" %}selected{% endif %}>
+                        Advanced
+                    </option>
+
+                </select>
+
+
+                <button type="submit">
+                    Filter
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <section class="courses">
+
+            {% for course in page_obj %}
+
+                <article class="course-card">
+
+                    <div class="course-number">
+                        {{ course.id }}
+                    </div>
+
+                    <div class="course-info">
+
+                        <span class="category">
+                            {{ course.category }}
+                        </span>
+
+                        <h2>
+                            {{ course.title }}
+                        </h2>
+
+                        <p>
+                            {{ course.description }}
+                        </p>
+
+                        <div class="course-meta">
+                            <span>{{ course.difficulty }}</span>
+                            <span>{{ course.duration }}</span>
+                        </div>
+
+                        <a
+                            href="{% url 'courses:course_detail' course.id %}"
+                            class="details-link"
+                        >
+                            View Details →
+                        </a>
+
+                    </div>
+
+                </article>
+
+            {% empty %}
+
+                <div class="empty">
+                    <h2>No courses found.</h2>
+                    <p>Try changing your search or filters.</p>
+                </div>
+
+            {% endfor %}
+
+        </section>
+
+
+        {% if page_obj.has_other_pages %}
+
+            <nav class="pagination">
+
+                {% if page_obj.has_previous %}
+
+                    <a href="{% url 'courses:course_list' %}?q={{ q|urlencode }}&category={{ category|urlencode }}&difficulty={{ difficulty|urlencode }}&page={{ page_obj.previous_page_number }}">
+                        ← Previous
+                    </a>
+
+                {% endif %}
+
+
+                <span>
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                </span>
+
+
+                {% if page_obj.has_next %}
+
+                    <a href="{% url 'courses:course_list' %}?q={{ q|urlencode }}&category={{ category|urlencode }}&difficulty={{ difficulty|urlencode }}&page={{ page_obj.next_page_number }}">
+                        Next →
+                    </a>
+
+                {% endif %}
+
+            </nav>
+
+        {% endif %}
+
+    </main>
+
+</body>
+
+</html>
