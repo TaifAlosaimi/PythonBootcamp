@@ -91,30 +91,22 @@ Then open the local development server in your browser.
 
 ### 🏠 Home Page
 
-![Home Page](../../../screenshots/(353)%20لقطة%20الشاشة.png)
+![Home Page](screenshots/homepage.png)
 
 ### 📚 Courses Page
 
-![Courses Page](../../../screenshots/(355)%20لقطة%20الشاشة.png)
+![Courses Page](screenshots/courses.png)
 
 ### 🔎 Course Detail
 
-![Course Detail](../../../screenshots/(356)%20لقطة%20الشاشة.png)
+![Course Detail](screenshots/coursedetail.png)
 
-### 🧩 Course Card
+### 📖 Course Detail — Additional View
 
-![Course Card](../../../screenshots/(357)%20لقطة%20الشاشة.png)
+![Course Detail Additional View](screenshots/course3detail.png)
 
-### 🌌 Project Page
+###  Footer
 
-![Project Page](../../../screenshots/(358)%20لقطة%20الشاشة.png)
-
-### 🖥️ Website Preview
-
-![Website Preview](../../../screenshots/(360)%20لقطة%20الشاشة.png)
-
-### ✨ Final Preview
-
-![Final Preview](../../../screenshots/(361)%20لقطة%20الشاشة.png)
+![Footer](screenshots/footer.png)
 
 **Python Web Development Bootcamp — Week 7, Day 2**
