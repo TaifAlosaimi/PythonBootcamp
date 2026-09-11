@@ -1,9 +1,9 @@
 csv_text = "apple,orange,banana,cherry,dates"
 
-splitted_text = csv_text.split(",")
+splitted_text = csv_text.split(",")                       #split تحول string إلى أجزاء داخل list
 print(splitted_text)
 
-joined_text = "-".join(splitted_text)
+joined_text = "-".join(splitted_text)         #join تجمع عدة سترنقز في سترنق واحد باستخدام separator
 
 print(f"""Your list is {csv_text}
 Splitted like this {splitted_text}

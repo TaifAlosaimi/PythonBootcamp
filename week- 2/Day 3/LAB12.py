@@ -1,12 +1,12 @@
 message = "Python Web Development"
-new_message = message.replace( "Development", "Programming")
+new_message = message.replace( "Development", "Programming")                 #replace تستبدل جزء من النص بنص آخر
 print(new_message)
 
 x = 5
 y = 6
 x, y =y,x
-print (y)
-print(x)
+print (x)
+print(y)
 
 is_online = None
 

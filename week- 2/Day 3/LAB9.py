@@ -1,5 +1,5 @@
 my_email = "  taif7falibrahim@gmail.com  "
-cleaned_email = my_email.strip()
+cleaned_email = my_email.strip()                      #strip تشيل ال whitespace
 
 message = "python web development"
 titled_message = message.title()
