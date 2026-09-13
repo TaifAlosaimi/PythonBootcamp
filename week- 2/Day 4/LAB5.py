@@ -1,7 +1,7 @@
 account_active = True
 has_permission = False
 
-if account_active:
+if account_active:                             #nested if: if statment inside another if statment
     if has_permission:
         print("Access Granted")
     else:

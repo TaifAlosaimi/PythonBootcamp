@@ -6,7 +6,7 @@ is_blocked = False
 if is_active and is_verified:
     print("Account is ready")
 
-if role == "admin" or role == "editor":
+if role == "admin" or role == "editor":                   #or: if at least one condtion is true
     print("User can edit")
 
 if not is_blocked:

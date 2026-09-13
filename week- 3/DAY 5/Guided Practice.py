@@ -12,7 +12,7 @@ report = [
      "average": f'{sum(student["scores"]) / len(student["scores"]):.2f}'
     }
     for student in students  
-]
+] 
 
 
 
