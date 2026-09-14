@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Thank You</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background:
+                radial-gradient(circle at top right, #263d73, transparent 35%),
+                linear-gradient(135deg, #080b18, #11182e);
+            color: white;
+            padding: 30px;
+        }
+
+        .card {
+            max-width: 600px;
+            text-align: center;
+            padding: 55px 40px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .icon {
+            font-size: 55px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #aeb7ce;
+            line-height: 1.7;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 13px 22px;
+            border-radius: 12px;
+            background: #6c7cff;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="icon">✦</div>
+
+    <h1>Thank You!</h1>
+
+    <p>
+        Your feedback has been received successfully.
+        We really appreciate you taking the time to share your thoughts.
+    </p>
+
+    <a href="{% url 'contact' %}">
+        Send another response
+    </a>
+
+</div>
+
+</body>
+</html>
