@@ -9,19 +9,19 @@ This project demonstrates how to build and handle a Django form, validate user i
 ## 📸 Screenshots
 
 ### Feedback Form
-![Feedback Form](config/static/images/1.png.png)
+![Feedback Form](static/images/1.png.png)
 
 ### Form Fields
-![Form Fields](config/static/images/2.png.png)
+![Form Fields](static/images/2.png.png)
 
 ### Validation Error
-![Validation Error](config/static/images/3.png.png)
+![Validation Error](static/images/3.png.png)
 
 ### Successful Submission
-![Successful Submission](config/static/images/4.png.png)
+![Successful Submission](static/images/4.png.png)
 
 ### Thank You Page
-![Thank You Page](config/static/images/5.png.png)
+![Thank You Page](static/images/5.png.png)
 
 
 ---
