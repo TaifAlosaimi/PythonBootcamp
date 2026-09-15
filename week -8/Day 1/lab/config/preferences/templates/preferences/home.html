@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Preferences & Cart</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: #f4f6fb;
+            color: #202538;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 40px 20px;
+        }
+
+        /* Dark theme */
+        body.dark {
+            background: #0b1020;
+            color: #f5f7ff;
+        }
+
+        /* Light theme */
+        body.light {
+            background: #f4f6fb;
+            color: #202538;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 850px;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 50px;
+            background: #6c63ff;
+            color: white;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            opacity: 0.7;
+            font-size: 17px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .card {
+            padding: 28px;
+            border-radius: 24px;
+
+            background: white;
+            border: 1px solid #e1e5ef;
+
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Dark cards */
+        body.dark .card {
+            background: #171d31;
+            border: 1px solid #303750;
+        }
+
+        .card h2 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            opacity: 0.7;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        a,
+        button {
+            border: none;
+            text-decoration: none;
+
+            padding: 11px 18px;
+            border-radius: 12px;
+
+            cursor: pointer;
+
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .primary {
+            background: #6c63ff;
+            color: white;
+        }
+
+        .secondary {
+            background: #e9e7ff;
+            color: #5148d9;
+        }
+
+        .danger {
+            background: #ff5c7a;
+            color: white;
+        }
+
+        .cart-count {
+            font-size: 52px;
+            font-weight: bold;
+            color: #6c63ff;
+            margin: 15px 0;
+        }
+
+        .cart-items {
+            margin: 15px 0;
+            opacity: 0.75;
+        }
+
+        .info {
+            margin-top: 20px;
+            text-align: center;
+            opacity: 0.6;
+            font-size: 14px;
+        }
+
+        @media (max-width: 700px) {
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 34px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body class="{% if theme == 'dark' %}dark{% else %}light{% endif %}">
+
+    <div class="container">
+
+        <!-- Hero Section -->
+
+        <div class="hero">
+
+            <span class="badge">
+                DJANGO • COOKIES & SESSIONS
+            </span>
+
+            <h1>
+                Preferences & Cart
+            </h1>
+
+            <p class="subtitle">
+                A tiny Django app for learning persistent preferences and sessions.
+            </p>
+
+        </div>
+
+
+        <div class="grid">
+
+            <!-- Theme Card -->
+
+            <div class="card">
+
+                <h2>🎨 Theme</h2>
+
+                <p>
+                    Your current theme is:
+                    <strong>{{ theme }}</strong>
+                </p>
+
+                <div class="buttons">
+
+                    <a
+                        href="{% url 'preferences:set_theme' 'light' %}"
+                        class="secondary">
+                        ☀️ Light
+                    </a>
+
+                    <a
+                        href="{% url 'preferences:set_theme' 'dark' %}"
+                        class="primary">
+                        🌙 Dark
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Cart Card -->
+
+            <div class="card">
+
+                <h2>🛒 Your Cart</h2>
+
+                <div class="cart-count">
+                    {{ cart_count }}
+                </div>
+
+                <p>
+                    item{{ cart_count|pluralize }} in your session cart.
+                </p>
+
+
+                {% if cart %}
+
+                    <div class="cart-items">
+                        Product IDs:
+                        {{ cart|join:", " }}
+                    </div>
+
+                {% else %}
+
+                    <div class="cart-items">
+                        Your cart is empty.
+                    </div>
+
+                {% endif %}
+
+
+                <div class="buttons">
+
+                    <a
+                        href="{% url 'preferences:add_to_cart' 101 %}"
+                        class="primary">
+                        + Add Product
+                    </a>
+
+                    <a
+                        href="{% url 'preferences:clear_cart' %}"
+                        class="danger">
+                        Clear Cart
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Info -->
+
+        <div class="info">
+
+            Theme → Cookie 🍪
+            &nbsp; • &nbsp;
+            Cart → Session 🔐
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

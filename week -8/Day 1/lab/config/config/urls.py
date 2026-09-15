@@ -23,4 +23,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.contact, name="home"),
     path("feedback/", include("feedback.urls")),
+    path("preferences/", include("preferences.urls")),
 ]
