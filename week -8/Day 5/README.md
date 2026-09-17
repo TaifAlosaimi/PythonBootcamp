@@ -8,4 +8,4 @@ This project demonstrates creating a Django `Product` model and working with a m
 
 The following screenshot shows the model import, instance creation, assigning values, and the final output:
 
-![Django Shell](shell.png.png)
+![Django Shell](shell.png.png) "
